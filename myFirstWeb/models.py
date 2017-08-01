@@ -3,6 +3,7 @@ from django.contrib import admin
 
 # Create your models here.
 
+
 class Animal_type(models.Model):
     type = models.CharField(max_length=120)
 
@@ -12,6 +13,8 @@ class Animal_type(models.Model):
     def __str__(self):
         return  self.type
 
+    def __eq__(self, other):
+        return str(self) == str(other)
 
 class Animal_category(models.Model):
     animal_type = models.ForeignKey(Animal_type)
@@ -24,3 +27,6 @@ class Animal_category(models.Model):
 
     def __str__(self):
         return  self.animal_category
+
+    def __eq__(self, other):
+        return str(self) == str(other)

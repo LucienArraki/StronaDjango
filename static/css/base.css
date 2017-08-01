@@ -12,8 +12,24 @@ body {
 .box {
   border: 1px solid #fff;
   border-radius: 20px;
-  padding: 100px;
-  width: 200px;
+  width: 500px;
   background-color: #fff;
   opacity: 0.7;
+}
+
+table, th, td {
+    padding: 10px;
+}
+
+table {
+    border-spacing: 15px;
+}
+
+p  {
+    font-size: 150%;
+}
+
+h1 {
+    font-size: 150%;
+
 }

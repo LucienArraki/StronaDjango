@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" xmlns="http://www.w3.org/1999/html">
 
 {% load staticfiles %}
 <head>
     <link rel = "stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-    <div class="contain" align="center">
+    <div class="contain" align="right">
         <div class="box">
-            <h1>Header</h1>
-            <p>Paragraph. Something to write...</p>
+            <table align="center">
+            {% for type in object_list_type %}
+                <tr>
+                    <td><h1>{{ type }}</h1></td>
+                    {% for category in object_list_category %}
+
+                        {% if type.type == category.animal_type %}
+
+                        <tr>
+                        <td><p>{{ category.animal_category }}</p></td>
+                        <td><p>od: {{ category.start_date|date:"d.m" }}<br/> do: {{ category.endDate|date:"d.m" }}</p></td>
+                        </tr>
+                        {% endif %}
+
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </table>
         </div>
     </div>
 </body>
